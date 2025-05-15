@@ -16,6 +16,27 @@ class UsuariosRepository extends ServiceEntityRepository
         parent::__construct($registry, Usuarios::class);
     }
 
+    public function findByEmail(string $email)
+    {
+        $result = $this->findOneBy(['Email' => $email]);
+        return $result;
+    }
+
+    public function findByToken(string $token)
+    {
+        $result = $this->findOneBy(['Token' => $token]);
+        return $result;
+    }
+
+    public function update(Usuarios $usuario)
+    {
+        $entityManager = $this->getEntityManager();
+        $entityManager->persist($usuario);
+        $entityManager->flush();
+
+        return $usuario;
+    }
+
     //    /**
     //     * @return Usuarios[] Returns an array of Usuarios objects
     //     */
