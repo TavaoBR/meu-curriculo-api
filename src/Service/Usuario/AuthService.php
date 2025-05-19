@@ -29,7 +29,7 @@ class AuthService
     private function autenticar(string $token)
     {
         $session = $this->usuario->findByToken($token);
-        if (!$session != null) {
+        if ($session != null) {
             return [
                 'id' => $session->getId(),
                 'token' => $session->getToken()
@@ -54,8 +54,8 @@ class AuthService
         $auth = $this->autenticar($token);
 
         return $auth ?
-            ['statusCode' => 200, 'message' => 'Autorizado.'] :
-            ['statusCode' => 401, 'message' => 'Não autorizado.', 'headers' => $this->headers()[1]];
+            ['status' => 200, 'message' => 'Autorizado.'] :
+            ['status' => 401, 'message' => 'Não autorizado.', 'headers' => $this->headers()[1]];
     }
 
     public function is_autenticado()

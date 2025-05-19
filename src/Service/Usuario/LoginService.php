@@ -46,7 +46,7 @@ class LoginService
         $usuario->setToken($token);
         $usuario->setUpdatedAt(new \DateTimeImmutable("now", new \DateTimeZone("America/Sao_Paulo")));
 
-        $this->usuario->updateUsuario($usuario);
+        $this->usuario->update($usuario);
 
         return [
             'status' => 200,

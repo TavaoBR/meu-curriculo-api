@@ -22,7 +22,7 @@ class Usuarios
     private ?string $Senha = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $Tentativas = null;
+    private ?int $Tentativas = 0;
 
     #[ORM\Column(length: 999, nullable: true)]
     private ?string $Token = null;
