@@ -16,6 +16,19 @@ class UsuariosRepository extends ServiceEntityRepository
         parent::__construct($registry, Usuarios::class);
     }
 
+    public function novo(array $data): Usuarios
+    {
+        $entityManager = $this->getEntityManager();
+        $usuario = new Usuarios;
+        $usuario->setEmail($data['email']);
+        $usuario->setSenha($data['senha']);
+        $usuario->setCreatedAt(new \DateTimeImmutable("now", new \DateTimeZone("America/Sao_Paulo")));
+        $entityManager->persist($usuario);
+        $entityManager->flush();
+
+        return $usuario;
+    }
+
     public function findByEmail(string $email)
     {
         $result = $this->findOneBy(['Email' => $email]);
@@ -28,7 +41,7 @@ class UsuariosRepository extends ServiceEntityRepository
         return $result;
     }
 
-    public function update(Usuarios $usuario)
+    public function update(Usuarios $usuario): Usuarios
     {
         $entityManager = $this->getEntityManager();
         $entityManager->persist($usuario);
