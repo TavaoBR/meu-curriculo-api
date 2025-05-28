@@ -4,9 +4,9 @@ namespace App\Enum;
 
 enum IdiomasEnum: string
 {
-    case Basico = 'Básico';
-    case Intermediario = 'Intermediário';
-    case Avancado = 'Avançado';
-    case Fluente = 'Fluente';
-    case Nativo = 'Nativo';
+    case basico = 'Básico';
+    case intermediario = 'Intermediário';
+    case avancado = 'Avançado';
+    case fluente = 'Fluente';
+    case nativo = 'Nativo';
 }

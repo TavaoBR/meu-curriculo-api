@@ -4,9 +4,9 @@ namespace App\Enum;
 
 enum TipoLinksEnum: string
 {
-    case Git = 'GitHub';
-    case Linkedin = 'LinkedIn';
-    case Website = 'Website';
-    case Portfolio = 'Portfólio';
-    case Outro = 'Outro';
+    case git = 'GitHub';
+    case linkedin = 'LinkedIn';
+    case website = 'Website';
+    case portfolio = 'Portfólio';
+    case outro = 'Outro';
 }

@@ -4,10 +4,10 @@ namespace App\Enum;
 
 enum NivelEnum: string
 {
-    case EnsinoMedio = 'Ensino Médio';
-    case Tecnico = 'Técnico';
-    case Graduacao = 'Graduação';
-    case PosGraducao = 'Pós-graduação';
-    case Mestrado = 'Mestrado';
-    case Doutorado = 'Doutorado';
+    case ensinoMedio = 'Ensino Médio';
+    case tecnico = 'Técnico';
+    case graduacao = 'Graduação';
+    case posGraducao = 'Pós-graduação';
+    case mestrado = 'Mestrado';
+    case doutorado = 'Doutorado';
 }

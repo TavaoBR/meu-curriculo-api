@@ -100,6 +100,15 @@ class Curriculos
     #[ORM\OneToMany(targetEntity: Projetos::class, mappedBy: 'CurriculoId')]
     private Collection $projetos;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Titulo = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $PublicToken = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $Padrao = null;
+
     public function __construct()
     {
         $this->experiencias = new ArrayCollection();
@@ -497,6 +506,42 @@ class Curriculos
                 $projeto->setCurriculoId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTitulo(): ?string
+    {
+        return $this->Titulo;
+    }
+
+    public function setTitulo(?string $Titulo): static
+    {
+        $this->Titulo = $Titulo;
+
+        return $this;
+    }
+
+    public function getPublicToken(): ?string
+    {
+        return $this->PublicToken;
+    }
+
+    public function setPublicToken(?string $PublicToken): static
+    {
+        $this->PublicToken = $PublicToken;
+
+        return $this;
+    }
+
+    public function isPadrao(): ?bool
+    {
+        return $this->Padrao;
+    }
+
+    public function setPadrao(?bool $Padrao): static
+    {
+        $this->Padrao = $Padrao;
 
         return $this;
     }
